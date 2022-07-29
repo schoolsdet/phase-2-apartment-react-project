@@ -1,6 +1,23 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
+import { Table, TableCell, TableRow, TableHead, TableBody, makeStyles, Button } from '@material-ui/core';
+import { deleteUser ,getallUsers } from '../service/api';
+import { Link } from 'react-router-dom';
 
 const AllUsers = () => {
+
+  const classes = useStyles();
+
+  const [user, setUser] = useState([]);
+
+  useEffect(() => {
+    getUsers();
+  }, []);
+
+  const getUsers = async (id) => {
+    await deleteUser(id);
+    getUsers();
+  }
+  
   return (
     <div>AllUsers</div>
   )
