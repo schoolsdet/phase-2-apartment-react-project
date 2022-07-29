@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import { Table, TableCell, TableRow, TableHead, TableBody, makeStyles, Button } from '@material-ui/core';
-import { deleteUser ,getallUsers } from '../service/api';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { Table, TableCell, TableRow, TableHead, TableBody, makeStyles, Button } from "@mui/material";
+import { deleteUser, getallUsers } from "../service/api";
+import { Link } from "react-router-dom";
 
 const AllUsers = () => {
-
   const classes = useStyles();
 
   const [user, setUser] = useState([]);
@@ -17,16 +16,57 @@ const AllUsers = () => {
     const response = await getallUsers();
     console.log(response);
     setUser(response.data);
-  }
+  };
 
   const deleteData = async (id) => {
     await deleteUser(id);
     getUsers();
-  }
+  };
 
   return (
-    <div>AllUsers</div>
-  )
-}
+    <Table className={classes.table}>
+      <TableHead>
+        <TableRow className={classes.thead}>
+          <TableCell>ID</TableCell>
+          <TableCell>Name</TableCell>
+          <TableCell>UserName</TableCell>
+          <TableCell>Email</TableCell>
+          <TableCell>Phone</TableCell>
+          <TableCell></TableCell>
+        </TableRow>
+      </TableHead>
+      <TableBody>
+        {user.map((data) => (
+          <TableRow className={classes.trow}>
+            <TableCell>{data.id}</TableCell>
+            <TableCell>{data.name}</TableCell>
+            <TableCell>{data.username}</TableCell>
+            <TableCell>{data.email}</TableCell>
+            <TableCell>{data.phone}</TableCell>
+            <TableCell>
+              <Button
+                variant="contained"
+                color="primary"
+                style={{ margin: "0px 20px" }}
+                component={Link}
+                to={`/edit/${data.id}`}
+              >
+                Edit
+              </Button>
+              <Button
+                variant="contained"
+                color="secondary"
+                style={{ margin: "0px 20px" }}
+                onClick={() => deleteData(data.id)}
+              >
+                Cancel
+              </Button>
+            </TableCell>
+          </TableRow>
+        ))}
+      </TableBody>
+    </Table>
+  );
+};
 
-export default AllUsers
+export default AllUsers;
