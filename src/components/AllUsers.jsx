@@ -3,8 +3,27 @@ import { Table, TableCell, TableRow, TableHead, TableBody, makeStyles, Button } 
 import { deleteUser, getallUsers } from "../service/api";
 import { Link } from "react-router-dom";
 
+const useStyle = makeStyles({
+  table: {
+    width: "80%",
+    margin: "50px 100px 100px 140px",
+  },
+  thead: {
+    "& > *": {
+      background: "#000000",
+      color: "#FFFFFF",
+      fontSize: "16px",
+    },
+  },
+  trow: {
+    "& > *": {
+      fontSize: "16px",
+    },
+  },
+});
+
 const AllUsers = () => {
-  const classes = useStyles();
+  const classes = useStyle();
 
   const [user, setUser] = useState([]);
 
