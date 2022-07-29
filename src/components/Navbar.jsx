@@ -1,5 +1,5 @@
 import React from "react";
-import { AppBar, makeStyles, Toolbar } from "@material-ui/core";
+import { AppBar, makeStyles, Toolbar } from "@mui/material";
 import { NavLink } from "react-router-dom";
 
 const useStyles = makeStyles({
@@ -15,6 +15,7 @@ const useStyles = makeStyles({
   });
 
 const Navbar = () => {
+  const classes = useStyles();
   return (
     <AppBar className={classes.header} position="static">
       <Toolbar>
