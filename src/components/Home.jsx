@@ -4,7 +4,7 @@ import {Container, Typography, Box } from '@mui/material'
 const Home = () => {
   return (
     <Container>
-        <Box>
+        <Box my={5}>
             <Typography variant="h3" components="h2" align="center">Apartment Managent System</Typography>
             <Typography component="h2" align="center">React Phase 2 Project</Typography>
         </Box>
