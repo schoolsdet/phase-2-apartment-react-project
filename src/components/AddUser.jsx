@@ -39,49 +39,40 @@ const AddUser = () => {
             <InputLabel>Name</InputLabel>
             <Input
               onChange={(e) => onValueChange(e)}
-              name="name"
-              value={name}
+              name="name"value={name}
             />
           </FormControl>
           <FormControl>
             <InputLabel>User Name</InputLabel>
             <Input
               onChange={(e) => onValueChange(e)}
-              name="username"
-              value={username}
+              name="username" value={username}
             />
           </FormControl>
           <FormControl>
             <InputLabel>Email address</InputLabel>
             <Input
               onChange={(e) => onValueChange(e)}
-              name="email"
-              value={email}
+              name="email" value={email}
             />
           </FormControl>
           <FormControl>
             <InputLabel>Phone Number</InputLabel>
             <Input
               onChange={(e) => onValueChange(e)}
-              name="phone"
-              value={phone}
+              name="phone" value={phone}
             />
           </FormControl>
           <Box my={3}>
             <Button
-              variant="contained"
-              onClick={() => addUserDetails()}
-              color="primary"
-              align="center"
+              variant="contained" onClick={() => addUserDetails()}
+              color="primary" align="center"
             >
               Add User
             </Button>
             <Button
-              onClick={() => history.push("/all")}
-              variant="contained"
-              color="secondary"
-              align="center"
-              style={{ margin: "0px 20px" }}
+              onClick={() => history.push("/all")} variant="contained"
+              color="secondary" align="center" style={{ margin: "0px 20px" }}
             >
               Cancel
             </Button>
