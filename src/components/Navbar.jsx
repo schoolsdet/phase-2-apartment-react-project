@@ -1,6 +1,18 @@
 import React from "react";
-import { AppBar, Toolbar } from "@material-ui/core";
+import { AppBar, makeStyles, Toolbar } from "@material-ui/core";
 import { NavLink } from "react-router-dom";
+
+const useStyles = makeStyles({
+    header: {
+        backgroundColor: '#212121',
+    },
+    spacing :{
+        paddingLeft: 20,
+        color: '#fff',
+        fontSize: '18px',
+        textDecoration: 'none',
+    }
+  });
 
 const Navbar = () => {
   return (
