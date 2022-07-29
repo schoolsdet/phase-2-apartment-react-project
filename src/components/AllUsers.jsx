@@ -14,10 +14,16 @@ const AllUsers = () => {
   }, []);
 
   const getUsers = async (id) => {
+    const response = await getallUsers();
+    console.log(response);
+    setUser(response.data);
+  }
+
+  const deleteData = async (id) => {
     await deleteUser(id);
     getUsers();
   }
-  
+
   return (
     <div>AllUsers</div>
   )
