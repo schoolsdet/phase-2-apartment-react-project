@@ -8,12 +8,12 @@ const initialValue = {
   lastname: "",
   email: "",
   rent: "",
-  date: ""
+  time: ""
 };
 
 const AddUser = () => {
   const [user, setUser] = useState(initialValue);
-  const { name, lastname, email, rent, date } = user;
+  const { name, lastname, email, rent, time } = user;
 
   const history = useHistory();
 
@@ -33,7 +33,7 @@ const AddUser = () => {
     <Container maxWidth="sm">
       <Box my={5}>
         <Typography variant="h5" align="center">
-          Add User Details
+          Add Residents Details
         </Typography>
         <FormGroup>
           <FormControl>
@@ -65,10 +65,10 @@ const AddUser = () => {
             />
           </FormControl>
           <FormControl>
-            <InputLabel>Date</InputLabel>
+            <InputLabel>Time In e.g: 10:30</InputLabel>
             <Input
               onChange={(e) => onValueChange(e)}
-              name="date" value={new Date}
+              name="time" value={time}
             />
           </FormControl>
           <Box my={3}>

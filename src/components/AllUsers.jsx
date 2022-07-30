@@ -3,18 +3,7 @@ import { Table, TableCell, TableRow, TableHead, TableBody, Button } from "@mui/m
 import { deleteUser, getallUsers } from "../service/api";
 import { Link } from "react-router-dom";
 
-// const useStyle = makeStyles({
-//   table: {
-//     width: "80%",
-//     margin: "50px 100px 100px 140px",
-//   },
-//   thead: {
-//     "& > *": {
-//       background: "#000000",
-//       color: "#FFFFFF",
-//       fontSize: "16px",
-//     },
-//   },
+//   
 //   trow: {
 //     "& > *": {
 //       fontSize: "16px",
@@ -23,7 +12,6 @@ import { Link } from "react-router-dom";
 // });
 
 const AllUsers = () => {
-  // const classes = useStyle();
 
   const [user, setUser] = useState([]);
 
@@ -42,16 +30,23 @@ const AllUsers = () => {
     getUsers();
   };
 
+  //Styling..
+  const tableStyle = {
+    width: "80%",
+    margin: "50px 100px 100px 140px",
+  }
+  
+
   return (
-    <Table>
+    <Table style={tableStyle}>
       <TableHead>
-        <TableRow>
+        <TableRow style={{fontSize: '18px'}}>
           <TableCell>ID</TableCell>
           <TableCell>First Name</TableCell>
           <TableCell>Last Name</TableCell>
           <TableCell>Email</TableCell>
-          <TableCell>Phone</TableCell>
-          <TableCell>Date</TableCell>
+          <TableCell>Rent ($)</TableCell>
+          <TableCell>Time</TableCell>
           <TableCell></TableCell>
         </TableRow>
       </TableHead>
@@ -62,8 +57,8 @@ const AllUsers = () => {
             <TableCell>{data.name}</TableCell>
             <TableCell>{data.lastname}</TableCell>
             <TableCell>{data.email}</TableCell>
-            <TableCell>{data.rent}</TableCell>
-            <TableCell>{data.date}</TableCell>
+            <TableCell>$ {data.rent}</TableCell>
+            <TableCell>{data.time}</TableCell>
             <TableCell>
               <Button
                 variant="contained" color="primary"
@@ -77,7 +72,7 @@ const AllUsers = () => {
                 style={{ margin: "0px 20px" }}
                 onClick={() => deleteData(data.id)}
               >
-                Cancel
+                Delete
               </Button>
             </TableCell>
           </TableRow>
