@@ -3,11 +3,11 @@ import { Container, Typography, FormControl, InputLabel, Input, Box, FormGroup, 
 import { editUser, getallUsers } from '../service/api';
 import { useHistory, useParams } from 'react-router-dom';
 
-const initialValue = { name: "", username : "", email: "", phone: ""}
+const initialValue = { name: "", lastname: "", email: "", phone: ""}
 
 const EditUser = () => {
   const [user, setUser] = useState(initialValue);
-  const {name, username, email, phone } = user;
+  const {name, lastname, email, phone } = user;
 
   const { id } = useParams();
 
@@ -52,8 +52,8 @@ const EditUser = () => {
           <FormControl>
             <InputLabel>User Name</InputLabel>
             <Input
-              onChange={(e) => onValueChange(e)} name="username"
-              value={username}
+              onChange={(e) => onValueChange(e)} name="lastname"
+              value={lastname}
             />
           </FormControl>
           <FormControl>

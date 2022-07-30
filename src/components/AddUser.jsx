@@ -5,14 +5,15 @@ import { useHistory } from "react-router-dom";
 
 const initialValue = {
   name: "",
-  username: "",
+  lastname: "",
   email: "",
-  phone: "",
+  rent: "",
+  date: ""
 };
 
 const AddUser = () => {
   const [user, setUser] = useState(initialValue);
-  const { name, username, email, phone } = user;
+  const { name, lastname, email, rent, date } = user;
 
   const history = useHistory();
 
@@ -36,17 +37,17 @@ const AddUser = () => {
         </Typography>
         <FormGroup>
           <FormControl>
-            <InputLabel>Name</InputLabel>
+            <InputLabel>First Name</InputLabel>
             <Input
               onChange={(e) => onValueChange(e)}
               name="name"value={name}
             />
           </FormControl>
           <FormControl>
-            <InputLabel>User Name</InputLabel>
+            <InputLabel>Last Name</InputLabel>
             <Input
               onChange={(e) => onValueChange(e)}
-              name="username" value={username}
+              name="lastname" value={lastname}
             />
           </FormControl>
           <FormControl>
@@ -57,10 +58,17 @@ const AddUser = () => {
             />
           </FormControl>
           <FormControl>
-            <InputLabel>Phone Number</InputLabel>
+            <InputLabel>Rent ($)</InputLabel>
             <Input
               onChange={(e) => onValueChange(e)}
-              name="phone" value={phone}
+              name="rent" value={rent}
+            />
+          </FormControl>
+          <FormControl>
+            <InputLabel>Date</InputLabel>
+            <Input
+              onChange={(e) => onValueChange(e)}
+              name="date" value={new Date}
             />
           </FormControl>
           <Box my={3}>

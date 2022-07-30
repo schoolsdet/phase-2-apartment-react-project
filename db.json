@@ -1,3 +1,12 @@
 {
-  "user": []
+  "user": [
+    {
+      "name": "Donald ",
+      "lastname": "Brooks",
+      "email": "brooks@example.com",
+      "rent": "45000",
+      "date": "e",
+      "id": 1
+    }
+  ]
 }

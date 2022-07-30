@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Table, TableCell, TableRow, TableHead, TableBody, Button } from "@mui/material"
-// import { makeStyles } from '@mui/styles';
 import { deleteUser, getallUsers } from "../service/api";
 import { Link } from "react-router-dom";
 
@@ -48,10 +47,11 @@ const AllUsers = () => {
       <TableHead>
         <TableRow>
           <TableCell>ID</TableCell>
-          <TableCell>Name</TableCell>
-          <TableCell>UserName</TableCell>
+          <TableCell>First Name</TableCell>
+          <TableCell>Last Name</TableCell>
           <TableCell>Email</TableCell>
           <TableCell>Phone</TableCell>
+          <TableCell>Date</TableCell>
           <TableCell></TableCell>
         </TableRow>
       </TableHead>
@@ -60,9 +60,10 @@ const AllUsers = () => {
           <TableRow>
             <TableCell>{data.id}</TableCell>
             <TableCell>{data.name}</TableCell>
-            <TableCell>{data.username}</TableCell>
+            <TableCell>{data.lastname}</TableCell>
             <TableCell>{data.email}</TableCell>
-            <TableCell>{data.phone}</TableCell>
+            <TableCell>{data.rent}</TableCell>
+            <TableCell>{data.date}</TableCell>
             <TableCell>
               <Button
                 variant="contained" color="primary"
