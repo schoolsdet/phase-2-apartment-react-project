@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const url = "http://127.0.0.1:3000/user";
+const url = "https://moringa-apart.herokuapp.com/user";
 
 export const getallUsers = async (id) => {
     id = id || '';
