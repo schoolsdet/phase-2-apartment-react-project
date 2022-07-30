@@ -1,29 +1,30 @@
 import React, { useEffect, useState } from "react";
-import { Table, TableCell, TableRow, TableHead, TableBody, makeStyles, Button } from "@mui/material";
+import { Table, TableCell, TableRow, TableHead, TableBody, Button } from "@mui/material"
+// import { makeStyles } from '@mui/styles';
 import { deleteUser, getallUsers } from "../service/api";
 import { Link } from "react-router-dom";
 
-const useStyle = makeStyles({
-  table: {
-    width: "80%",
-    margin: "50px 100px 100px 140px",
-  },
-  thead: {
-    "& > *": {
-      background: "#000000",
-      color: "#FFFFFF",
-      fontSize: "16px",
-    },
-  },
-  trow: {
-    "& > *": {
-      fontSize: "16px",
-    },
-  },
-});
+// const useStyle = makeStyles({
+//   table: {
+//     width: "80%",
+//     margin: "50px 100px 100px 140px",
+//   },
+//   thead: {
+//     "& > *": {
+//       background: "#000000",
+//       color: "#FFFFFF",
+//       fontSize: "16px",
+//     },
+//   },
+//   trow: {
+//     "& > *": {
+//       fontSize: "16px",
+//     },
+//   },
+// });
 
 const AllUsers = () => {
-  const classes = useStyle();
+  // const classes = useStyle();
 
   const [user, setUser] = useState([]);
 
@@ -43,9 +44,9 @@ const AllUsers = () => {
   };
 
   return (
-    <Table className={classes.table}>
+    <Table>
       <TableHead>
-        <TableRow className={classes.thead}>
+        <TableRow>
           <TableCell>ID</TableCell>
           <TableCell>Name</TableCell>
           <TableCell>UserName</TableCell>
@@ -56,7 +57,7 @@ const AllUsers = () => {
       </TableHead>
       <TableBody>
         {user.map((data) => (
-          <TableRow className={classes.trow}>
+          <TableRow>
             <TableCell>{data.id}</TableCell>
             <TableCell>{data.name}</TableCell>
             <TableCell>{data.username}</TableCell>
