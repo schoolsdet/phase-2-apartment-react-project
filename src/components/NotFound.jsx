@@ -1,17 +1,10 @@
 import React from 'react';
-// import { makeStyles } from '@mui/material';
-import notfound from './../Assets/Images/404page-website.png';
-
-// const useStyles = makeStyles({
-//     error: {
-//         textAlign: 'center',
-//         marginTop: '20px',
-//         marginBottom: '20px',
-//     },
-//   });
+import notfound from './../assets/images/404page-website.png';
 
 const NotFound = () => {
-  // const classes = useStyles();
+  // const error = { textAlign: 'center',
+  //     marginTop: '20px', marginBottom: '20px',
+  }
   return (
     <div>
       <img src={notfound} style={{width:'800px',height:'550px'}} alt="not found"/>
