@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const url = "https://project-mgmt-graphql-f6f0f6666ee3.herokuapp.com/";
+const url = "https://project-mgmt-graphql-f6f0f6666ee3.herokuapp.com";
 
 export const getallUsers = async (id) => {
     id = id || '';
